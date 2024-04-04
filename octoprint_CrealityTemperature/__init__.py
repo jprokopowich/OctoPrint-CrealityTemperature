@@ -7,7 +7,7 @@ import re
 class CrealityTemperaturePlugin(octoprint.plugin.OctoPrintPlugin):
 
 	def log(self, comm_instance, line, *args, **kwargs):
-		if re.match("^(ok)?\s*==T", line):
+		if re.match("^(ok)?\s*== T", line):
 			fix = re.sub("==", "", line)
 			return fix
 		return line
